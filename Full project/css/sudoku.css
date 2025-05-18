@@ -1,258 +1,252 @@
-/* sudoku.css - Styles for the Sudoku game */
-
-.game-header {
-    text-align: center;
-    padding: 2rem 0;
+.sudoku-watermark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
 }
 
+/* Play container */
+.play-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(253, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.play-container h1 {
+    color: #c41e3a; /* Red color for title */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Difficulty selector */
 .difficulty-selector {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-bottom: 20px;
 }
 
 .difficulty-btn {
-    background-color: var(--light-gray);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    margin: 0 0.5rem;
-    border-radius: 4px;
+    padding: 8px 20px;
+    margin: 0 10px;
+    background-color: rgb(255, 253, 253);
+    border: 2px solid #c41e3a;
+    color: #c41e3a;
+    border-radius: 15px;
     cursor: pointer;
-    font-weight: 500;
     transition: all 0.3s ease;
+    font-weight: bold;
 }
 
 .difficulty-btn:hover {
-    background-color: var(--medium-gray);
+    background-color: #ffecee;
 }
 
 .difficulty-btn.active {
-    background-color: var(--primary-red);
-    color: var(--white);
+    background-color: #c41e3a;
+    color: white;
 }
 
-.game-container {
+/* Game controls */
+.game-controls {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-.game-info {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 1rem;
+.game-controls button {
+    padding: 8px 15px;
+    margin: 0 10px 10px;
+    background-color: white;
+    border: 2px solid #c41e3a;
+    color: #c41e3a;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.game-controls button:hover {
+    background-color: #ffecee;
 }
 
 .timer {
-    font-size: 1.5rem;
+    padding: 8px 15px;
+    margin: 0 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius:  15px;
     font-weight: bold;
-    padding: 0.5rem 1rem;
-    background-color: var(--light-gray);
-    border-radius: 4px;
 }
 
-.game-controls {
+/* Sudoku grid */
+.sudoku-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.game-btn {
-    background-color: var(--light-gray);
-    border: none;
-    padding: 0.5rem 1rem;
-    margin-left: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.game-btn:hover {
-    background-color: var(--medium-gray);
-}
-
-/* Sudoku Board */
-.sudoku-board {
+.sudoku-grid {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 1fr);
+    gap: 1px;
+    border: 3px solid #333;
+    margin-bottom: 20px;
     width: 100%;
-    max-width: 500px;
-    aspect-ratio: 1 / 1;
-    border: 2px solid var(--black);
-    box-shadow: 0 4px 8px var(--shadow);
-    margin-bottom: 2rem;
+    max-width: 450px;
+    aspect-ratio: 1/1;
 }
 
 .sudoku-cell {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    border: 1px solid var(--medium-gray);
-    background-color: var(--white);
-    position: relative;
+    background-color: white;
+    border: 1px solid #ccc;
     cursor: pointer;
-    user-select: none;
+    font-size: 1.5rem;
+    position: relative;
     transition: all 0.2s ease;
 }
 
-/* Cell borders for 3x3 sections */
-.sudoku-cell[data-col="3"], 
-.sudoku-cell[data-col="6"] {
-    border-left: 2px solid var(--black);
+/* Add thicker borders for 3x3 subgrids */
+.sudoku-cell:nth-child(3n) {
+    border-right: 2px solid #333;
 }
 
-.sudoku-cell[data-row="3"], 
-.sudoku-cell[data-row="6"] {
-    border-top: 2px solid var(--black);
+.sudoku-cell:nth-child(9n) {
+    border-right: none;
+}
+
+.sudoku-cell:nth-child(n+19):nth-child(-n+27),
+.sudoku-cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #333;
 }
 
 /* Cell states */
 .sudoku-cell.selected {
-    background-color: rgba(229, 57, 53, 0.2);
-}
-
-.sudoku-cell.same-number {
-    background-color: rgba(229, 57, 53, 0.1);
-}
-
-.sudoku-cell.highlight {
-    background-color: rgba(229, 57, 53, 0.05);
+    background-color: #ffe1e6;
 }
 
 .sudoku-cell.fixed {
     font-weight: bold;
-    color: var(--black);
+    color: #333;
+    background-color: #f8f8f8;
 }
 
-.sudoku-cell.user-input {
-    color: var(--primary-red);
+.sudoku-cell.error {
+    color: #c41e3a;
 }
 
-.sudoku-cell.incorrect {
-    color: var(--primary-red-dark);
-    animation: shake 0.5s ease;
+.sudoku-cell.highlight {
+    background-color: #fff0f2;
 }
 
-.sudoku-cell.correct {
-    color: green;
-}
-
-/* Animations */
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-}
-
-/* Cell notes */
-.cell-notes {
+/* Notes grid inside cells */
+.notes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
-    pointer-events: none;
+    width: 100%;
+    font-size: 0.5rem;
+    color: #666;
 }
 
 .note {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.5rem;
-    color: var(--dark-gray);
 }
 
-/* Number Pad */
+/* Number pad */
 .number-pad {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 0.5rem;
+    gap: 15px;
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
+    margin-top: 10px;
 }
 
 .number-btn {
-    background-color: var(--light-gray);
-    border: none;
-    padding: 0.75rem 0;
-    border-radius: 4px;
-    font-size: 1.25rem;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #c41e3a;
+    color: #d31535;
+    border-radius: 15px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
 }
 
 .number-btn:hover {
-    background-color: var(--medium-gray);
+    background-color: #ffecee;
 }
 
-.number-btn[data-number="notes"],
-.number-btn[data-number="0"] {
-    grid-column: span 2;
+.erase-btn, .note-btn {
+    grid-column: span 2.5;
 }
 
-/* Game Status */
+.note-btn.active {
+    background-color: #c41e3a;
+    color: white;
+}
+
+/* Game status */
 .game-status {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-top: 10px;
+    font-weight: bold;
+    min-height: 24px;
 }
 
-#status-message {
-    padding: 1rem;
-    border-radius: 4px;
-    font-weight: 500;
-}
-
-#status-message.success {
-    background-color: #c8e6c9;
-    color: #2e7d32;
-}
-
-#status-message.error {
-    background-color: #ffcdd2;
-    color: #c62828;
-}
-
-#status-message.info {
-    background-color: #bbdefb;
-    color: #1565c0;
-}
-
-/* Responsive Styles */
+/* Responsive design */
 @media (max-width: 600px) {
-    .game-info {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .timer {
-        margin-bottom: 1rem;
-    }
-    
-    .game-controls {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .difficulty-selector {
-        flex-wrap: wrap;
-    }
-    
-    .difficulty-btn {
-        margin-bottom: 0.5rem;
+    .sudoku-grid {
+        max-width: 350px;
     }
     
     .number-pad {
-        grid-template-columns: repeat(3, 1fr);
+        max-width: 350px;
     }
     
-    .number-btn[data-number="notes"],
-    .number-btn[data-number="0"] {
-        grid-column: span 1;
+    .sudoku-cell {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .sudoku-grid {
+        max-width: 280px;
+    }
+    
+    .number-pad {
+        max-width: 280px;
+    }
+    
+    .sudoku-cell {
+        font-size: 1rem;
+    }
+    
+    .difficulty-btn, .game-controls button {
+        padding: 6px 12px;
+        margin: 0 5px 5px;
+        font-size: 0.9rem;
     }
 }
