@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sudoku Master</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="sudoku-watermark"></div>
+    
+    <header>
+        <div class="logo">
+            <h1>Sudoku Master</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="play.html">Play Sudoku</a></li>
+                <li><a href="learning.html">Learning Sudoku</a></li>
+                <li><a href="championship.html">Championship</a></li>
+                <li><a href="signin.html" class="auth-btn">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Sign Up</h2>
+                <p>Create your Sudoku Master account</p>
+            </div>
+            
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="other" name="gender" value="other" required>
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    <div class="password-strength-meter">
+                        <div class="strength-bar"></div>
+                    </div>
+                    <p class="password-hint">Use 8+ characters with a mix of letters, numbers & symbols</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                
+                <div class="form-check">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn auth-submit-btn">Create Account</button>
+            </form>
+            
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
+            
+            <div class="social-auth">
+                <button class="social-btn google-btn">
+                    <span class="social-icon">G</span>
+                    <span>Sign up with Google</span>
+                </button>
+                
+                <button class="social-btn facebook-btn">
+                    <span class="social-icon">f</span>
+                    <span>Sign up with Facebook</span>
+                </button>
+            </div>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="signin.html">Sign In</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Sudoku Master. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

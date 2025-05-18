@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sudoku Master - Championship</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="play.html">Play Sudoku</a></li>
+      <li><a href="learning.html">Learning Sudoku</a></li>
+      <li><a href="championship.html" class="active">Championship</a></li>
+      <li><a href="signin.html">Sign In / Register</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Sudoku Championship</h1>
+    <p>Compete with other users and climb the leaderboard!</p>
+
+    <section id="leaderboard">
+      <h2>Leaderboard</h2>
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>User</th><th>Score</th></tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <!-- Leaderboard rows injected here by JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/championship.js"></script>
+</body>
+</html>

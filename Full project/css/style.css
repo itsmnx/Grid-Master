@@ -1,0 +1,351 @@
+/* style.css - Main stylesheet for Sudoku Master */
+
+/* CSS Variables for Theme */
+:root {
+    --primary-red: #e40505;
+    --primary-red-light: #ff6f60;
+    --primary-red-dark: #7a040e;
+    --white: #f8f3f3;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #757575;
+    --black: #39303b;
+    --shadow: rgba(236, 26, 26, 0.1);
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Sudoku Watermark */
+.sudoku-watermark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect x="0" y="0" width="400" height="400" fill="none" stroke="%23ffcdd2" stroke-width="2"/><line x1="133" y1="0" x2="133" y2="400" stroke="%23ffcdd2" stroke-width="2"/><line x1="266" y1="0" x2="266" y2="400" stroke="%23ffcdd2" stroke-width="2"/><line x1="0" y1="133" x2="400" y2="133" stroke="%23ffcdd2" stroke-width="2"/><line x1="0" y1="266" x2="400" y2="266" stroke="%23ffcdd2" stroke-width="2"/></svg>');
+    background-repeat: repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3b474d;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px var(--shadow);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    color: var(--primary-red);
+    font-weight: bold;
+    padding: 0 2rem;
+}
+
+header, nav, .menu {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    justify-content: space-between;
+}
+
+nav {
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin-left: 1.5rem;
+}
+
+.menu a {
+    color: var(--black);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover, .menu a.active {
+    color: var(--primary-red);
+    background-color: rgba(229, 57, 53, 0.05);
+}
+
+.auth-btn {
+    background-color: var(--primary-red);
+    color: var(--white) !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+    background-color: var(--primary-red-dark);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: var(--white);
+    color: var(--primary-red);
+}
+
+.primary-btn:hover {
+    background-color: var(--light-gray);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    margin-left: 1rem;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 4rem 2rem;
+    background-color: var(--light-gray);
+}
+
+.feature {
+    flex: 1;
+    min-width: 300px;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Game Types */
+.game-types {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.game-types h2 {
+    margin-bottom: 3rem;
+}
+
+.game-types-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.game-type {
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.game-type:hover {
+    background-color: var(--primary-red-light);
+    color: var(--white);
+}
+
+/* Footer */
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    color: var(--medium-gray);
+    margin-right: 1.5rem;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+/* Responsive Styles */
+@media (max-width: 1366px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    nav {
+        width: 100%;
+        justify-content: center;
+        overflow-x: auto;
+    }
+    
+    .menu {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .menu li {
+        margin: 0 0.5rem;
+    }
+    
+    .features, .game-types-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature, .game-type {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .secondary-btn {
+        margin: 1rem 0 0 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        margin-top: 1rem;
+    }
+    
+}

@@ -1,0 +1,258 @@
+/* sudoku.css - Styles for the Sudoku game */
+
+.game-header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.difficulty-selector {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.difficulty-btn {
+    background-color: var(--light-gray);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.difficulty-btn:hover {
+    background-color: var(--medium-gray);
+}
+
+.difficulty-btn.active {
+    background-color: var(--primary-red);
+    color: var(--white);
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+}
+
+.timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+}
+
+.game-controls {
+    display: flex;
+}
+
+.game-btn {
+    background-color: var(--light-gray);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-btn:hover {
+    background-color: var(--medium-gray);
+}
+
+/* Sudoku Board */
+.sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    border: 2px solid var(--black);
+    box-shadow: 0 4px 8px var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.sudoku-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border: 1px solid var(--medium-gray);
+    background-color: var(--white);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+/* Cell borders for 3x3 sections */
+.sudoku-cell[data-col="3"], 
+.sudoku-cell[data-col="6"] {
+    border-left: 2px solid var(--black);
+}
+
+.sudoku-cell[data-row="3"], 
+.sudoku-cell[data-row="6"] {
+    border-top: 2px solid var(--black);
+}
+
+/* Cell states */
+.sudoku-cell.selected {
+    background-color: rgba(229, 57, 53, 0.2);
+}
+
+.sudoku-cell.same-number {
+    background-color: rgba(229, 57, 53, 0.1);
+}
+
+.sudoku-cell.highlight {
+    background-color: rgba(229, 57, 53, 0.05);
+}
+
+.sudoku-cell.fixed {
+    font-weight: bold;
+    color: var(--black);
+}
+
+.sudoku-cell.user-input {
+    color: var(--primary-red);
+}
+
+.sudoku-cell.incorrect {
+    color: var(--primary-red-dark);
+    animation: shake 0.5s ease;
+}
+
+.sudoku-cell.correct {
+    color: green;
+}
+
+/* Animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Cell notes */
+.cell-notes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+    color: var(--dark-gray);
+}
+
+/* Number Pad */
+.number-pad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.5rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.number-btn {
+    background-color: var(--light-gray);
+    border: none;
+    padding: 0.75rem 0;
+    border-radius: 4px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.number-btn:hover {
+    background-color: var(--medium-gray);
+}
+
+.number-btn[data-number="notes"],
+.number-btn[data-number="0"] {
+    grid-column: span 2;
+}
+
+/* Game Status */
+.game-status {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#status-message {
+    padding: 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+#status-message.success {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+#status-message.error {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+#status-message.info {
+    background-color: #bbdefb;
+    color: #1565c0;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .game-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timer {
+        margin-bottom: 1rem;
+    }
+    
+    .game-controls {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .difficulty-selector {
+        flex-wrap: wrap;
+    }
+    
+    .difficulty-btn {
+        margin-bottom: 0.5rem;
+    }
+    
+    .number-pad {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .number-btn[data-number="notes"],
+    .number-btn[data-number="0"] {
+        grid-column: span 1;
+    }
+}
