@@ -16,53 +16,19 @@ Sudoku Master is a full-stack web application that lets users play Sudoku online
 
 ---
 
-## 📁 Project Structure
+## ⚙️ Tech Stack
 
-sudoku-master/
-│
-├── frontend/
-│   ├── index.html                # Home page
-│   ├── play.html                 # Play Sudoku page
-│   ├── learning.html             # Learning Sudoku page
-│   ├── championship.html         # Championship page
-│   ├── signin.html               # Sign in page
-│   ├── signup.html               # Sign up page
-│   ├── css/
-│   │   ├── style.css             # Main stylesheet
-│   │   ├── sudoku.css            # Sudoku grid styles
-│   │   └── auth.css              # Authentication styles
-│   │
-│   ├── js/
-│   │   ├── main.js               # Main JavaScript file
-│   │   ├── sudoku.js             # Sudoku game logic
-│   │   ├── auth.js               # Authentication functions
-│   │   └── learning.js           # Learning page interactions
-│   │
-│   └── assets/
-│       └── images/               # Image assets
-│
-├── backend/
-│   ├── server.js                 # Express server setup
-│   ├── routes/
-│   │   ├── auth.js               # Authentication routes
-│   │   ├── sudoku.js             # Sudoku game routes
-│   │   └── championship.js       # Championship routes
-│   │
-│   ├── controllers/
-│   │   ├── authController.js     # Auth controller
-│   │   ├── sudokuController.js   # Sudoku game controller
-│   │   └── championshipController.js # Championship controller
-│   │
-│   ├── models/
-│   │   ├── user.js               # User model
-│   │   ├── sudoku.js             # Sudoku model
-│   │   └── championship.js       # Championship model
-│   │
-│   ├── utils/
-│   │   ├── sudokuGenerator.js    # Sudoku puzzle generator
-│   │   └── sudokuSolver.js       # Sudoku solver algorithm
-│   │
-│   └── middleware/
-│       └── auth.js               # Authentication middleware
-│
-└── package.json                  # Project dependencies
+**Frontend**:
+- HTML, CSS, JavaScript
+- Responsive design (mobile-friendly)
+
+**Backend**:
+- Node.js
+- Express.js
+- MongoDB (for storing user and game data)
+
+**Others**:
+- Sudoku puzzle generator and solver (custom logic)
+- JWT-based authentication (planned or implemented)
+
+---
