@@ -33,6 +33,6 @@ Sudoku Master is a full-stack web application that lets users play Sudoku online
 
 ---
 ---
-Currently looking like-
+Currently looking like-(LOCAL HOST SERVER)
 http://127.0.0.1:5500/play.html
 ---
