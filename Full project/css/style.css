@@ -3,14 +3,14 @@
 /* CSS Variables for Theme */
 :root {
     --primary-red: #e40505;
-    --primary-red-light: #ff6f60;
+    --primary-red-light: #d85041;
     --primary-red-dark: #7a040e;
-    --white: #f8f3f3;
-    --light-gray: #f5f5f5;
-    --medium-gray: #e0e0e0;
-    --dark-gray: #757575;
-    --black: #39303b;
-    --shadow: rgba(236, 26, 26, 0.1);
+    --white: #f9f1f1;
+    --light-gray: #f3f0f0;
+    --medium-gray: #ad8989;
+    --dark-gray: #de1818;
+    --black: #000000;
+    --shadow: rgb(137, 133, 122);
 }
 
 /* Global Styles */
@@ -130,7 +130,7 @@ nav {
 
 .menu a:hover, .menu a.active {
     color: var(--primary-red);
-    background-color: rgba(229, 57, 53, 0.05);
+    background-color: rgba(58, 12, 12, 0.05);
 }
 
 .auth-btn {
