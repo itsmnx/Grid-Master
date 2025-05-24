@@ -31,8 +31,4 @@ Sudoku Master is a full-stack web application that lets users play Sudoku online
 - Sudoku puzzle generator and solver (custom logic)
 - JWT-based authentication (planned or implemented)
 
----
----
-Currently looking like-(LOCAL HOST SERVER)
-http://127.0.0.1:5500/play.html
----
+
