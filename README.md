@@ -1,4 +1,4 @@
-# 🧠 Sudoku Master
+# 🧠 Grid Master
 
 Sudoku Master is a full-stack web application that lets users play Sudoku online with various difficulty levels, learn solving techniques, and participate in championships. It features a clean UI, user authentication, random Sudoku puzzle generation, solving functionality, and a learning section.
 
