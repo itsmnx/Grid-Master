@@ -3,157 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Sudoku - Sudoku Master</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Learning Sudoku - Grid Master</title>
+    <link rel="stylesheet" href="css/learning.css">
 </head>
 <body>
-    <div class="sudoku-watermark"></div>
-    
-    <header>
-        <div class="logo">
-            <h1>Sudoku Master</h1>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <h2>GRID MASTER</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="HOME.html">Home</a></li>
                 <li><a href="play.html">Play Sudoku</a></li>
                 <li><a href="learning.html" class="active">Learning Sudoku</a></li>
                 <li><a href="championship.html">Championship</a></li>
-                <li><a href="signin.html" class="auth-btn">Sign In</a></li>
+                <li><a href="signin.html">Sign In</a></li>
             </ul>
-        </nav>
-    </header>
+           
+        </div>
+    </nav>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h2>Learning Sudoku</h2>
-                <p>Master the art of Sudoku with our comprehensive tutorials and strategies</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="page-header">
+                <h1>Master the Art of Sudoku</h1>
+                <p>Learn from basics to advanced techniques with our comprehensive guide</p>
+            </header>
+
+            <!-- Learning Navigation Tabs -->
+            <div class="learning-tabs">
+                <button class="tab-btn active" data-tab="basics">Basics</button>
+                <button class="tab-btn" data-tab="rules">Rules</button>
+                <button class="tab-btn" data-tab="strategies">Strategies</button>
+                <button class="tab-btn" data-tab="types">Sudoku Types</button>
+                <button class="tab-btn" data-tab="tips">Pro Tips</button>
             </div>
-        </section>
 
-        <section class="container">
-            <div class="tab-container">
-                <div class="tabs">
-                    <button class="tab-btn active" data-tab="basics">Basics</button>
-                    <button class="tab-btn" data-tab="techniques">Techniques</button>
-                    <button class="tab-btn" data-tab="variants">Sudoku Variants</button>
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Basics Tab -->
+                <div id="basics" class="tab-panel active">
+                    <div class="content-section">
+                        <h2>🎯 What is Sudoku?</h2>
+                        <div class="content-grid">
+                            <div class="content-text">
+                                <p>Sudoku is a logic-based number puzzle that has captivated millions worldwide. The objective is simple yet challenging: fill a 9×9 grid with digits 1-9, ensuring each number appears only once in every row, column, and 3×3 sub-grid.</p>
+                                
+                                <h3>Key Components:</h3>
+                                <ul>
+                                    <li><strong>Grid:</strong> 9×9 squares divided into nine 3×3 sub-grids</li>
+                                    <li><strong>Numbers:</strong> Digits 1 through 9</li>
+                                    <li><strong>Clues:</strong> Pre-filled numbers that guide your solution</li>
+                                    <li><strong>Logic:</strong> No guessing required - pure deduction</li>
+                                </ul>
+                            </div>
+                            <div class="example-grid">
+                                <div class="mini-sudoku" id="example-grid">
+                                    <!-- Will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="tab-content">
-                    <!-- Basics Tab -->
-                    <div class="tab-pane active" id="basics">
-                        <h3>What is Sudoku?</h3>
-                        <p>Sudoku is a logic-based number placement puzzle. The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids (also called "boxes" or "regions") contains all of the digits from 1 to 9.</p>
-                        
-                        <div class="learning-image">
-                            <div class="sudoku-example">
-                                <!-- Simple Sudoku example here -->
+                <!-- Rules Tab -->
+                <div id="rules" class="tab-panel">
+                    <div class="content-section">
+                        <h2>📋 The Golden Rules</h2>
+                        <div class="rules-container">
+                            <div class="rule-card">
+                                <div class="rule-icon">1️⃣</div>
+                                <h3>Row Rule</h3>
+                                <p>Each horizontal row must contain all digits from 1 to 9, with no repetition.</p>
+                            </div>
+                            <div class="rule-card">
+                                <div class="rule-icon">2️⃣</div>
+                                <h3>Column Rule</h3>
+                                <p>Each vertical column must contain all digits from 1 to 9, with no repetition.</p>
+                            </div>
+                            <div class="rule-card">
+                                <div class="rule-icon">3️⃣</div>
+                                <h3>Box Rule</h3>
+                                <p>Each 3×3 sub-grid (box) must contain all digits from 1 to 9, with no repetition.</p>
                             </div>
                         </div>
                         
-                        <h3>Rules of Sudoku</h3>
-                        <ol class="rules-list">
-                            <li>Each row must contain the numbers 1-9 without repetition.</li>
-                            <li>Each column must contain the numbers 1-9 without repetition.</li>
-                            <li>Each of the nine 3×3 subgrids must contain the numbers 1-9 without repetition.</li>
-                        </ol>
-                        
-                        <h3>How to Start</h3>
-                        <p>When you start a Sudoku puzzle, some cells will already be filled with numbers. These are called "givens" or "clues". The more givens in a puzzle, the easier it typically is to solve.</p>
-                        
-                        <div class="tip-box">
-                            <h4>Beginner Tip</h4>
-                            <p>Start by scanning rows and columns to identify where a specific number can be placed based on its absence elsewhere. Look for rows, columns, or boxes that already have several numbers filled in.</p>
+                        <div class="important-note">
+                            <h3>🔑 Remember:</h3>
+                            <p>These three rules work together. A number placement must satisfy ALL three rules simultaneously!</p>
                         </div>
                     </div>
-                    
-                    <!-- Techniques Tab -->
-                    <div class="tab-pane" id="techniques">
-                        <h3>Basic Techniques</h3>
+                </div>
+
+                <!-- Strategies Tab -->
+                <div id="strategies" class="tab-panel">
+                    <div class="content-section">
+                        <h2>🧠 Solving Strategies</h2>
                         
-                        <div class="technique">
-                            <h4>1. Scanning</h4>
-                            <p>Systematically check each row, column, and box to identify missing numbers and potential placements.</p>
+                        <div class="strategy-section">
+                            <h3>Beginner Techniques</h3>
+                            <div class="technique-grid">
+                                <div class="technique-card">
+                                    <h4>1. Naked Singles</h4>
+                                    <p>When a cell has only one possible number, fill it in immediately.</p>
+                                    <button class="demo-btn" onclick="showDemo('naked-singles')">View Demo</button>
+                                </div>
+                                <div class="technique-card">
+                                    <h4>2. Hidden Singles</h4>
+                                    <p>When a number can only go in one cell within a row, column, or box.</p>
+                                    <button class="demo-btn" onclick="showDemo('hidden-singles')">View Demo</button>
+                                </div>
+                                <div class="technique-card">
+                                    <h4>3. Elimination</h4>
+                                    <p>Cross out impossible numbers to narrow down possibilities.</p>
+                                    <button class="demo-btn" onclick="showDemo('elimination')">View Demo</button>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="technique">
-                            <h4>2. Pencil Marking</h4>
-                            <p>Write down all possible numbers for each empty cell. As you fill in cells, update and eliminate options from remaining cells.</p>
-                        </div>
-                        
-                        <h3>Intermediate Techniques</h3>
-                        
-                        <div class="technique">
-                            <h4>3. Candidate Elimination</h4>
-                            <p>If a number appears as a candidate in only one cell within a row, column, or box, then that number must go in that cell.</p>
-                        </div>
-                        
-                        <div class="technique">
-                            <h4>4. Pointing Pairs/Triples</h4>
-                            <p>When a number can only appear in two or three cells within a box, and these cells are all in the same row or column, that number can be eliminated from other cells in that row or column.</p>
-                        </div>
-                        
-                        <h3>Advanced Techniques</h3>
-                        
-                        <div class="technique">
-                            <h4>5. X-Wing</h4>
-                            <p>When a candidate appears in exactly two cells in each of two different rows, and these cells also align in the same columns, the candidate can be eliminated from other cells in those columns.</p>
-                        </div>
-                        
-                        <div class="technique">
-                            <h4>6. Swordfish</h4>
-                            <p>An extension of X-Wing involving three rows and three columns.</p>
+
+                        <div class="strategy-section">
+                            <h3>Intermediate Techniques</h3>
+                            <div class="technique-grid">
+                                <div class="technique-card">
+                                    <h4>4. Naked Pairs</h4>
+                                    <p>When two cells in a unit can only contain the same two numbers.</p>
+                                    <button class="demo-btn" onclick="showDemo('naked-pairs')">View Demo</button>
+                                </div>
+                                <div class="technique-card">
+                                    <h4>5. Pointing Pairs</h4>
+                                    <p>When a number in a box is limited to one row or column.</p>
+                                    <button class="demo-btn" onclick="showDemo('pointing-pairs')">View Demo</button>
+                                </div>
+                                <div class="technique-card">
+                                    <h4>6. Box/Line Reduction</h4>
+                                    <p>Eliminate possibilities based on box-line interactions.</p>
+                                    <button class="demo-btn" onclick="showDemo('box-line')">View Demo</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Variants Tab -->
-                    <div class="tab-pane" id="variants">
-                        <h3>Sudoku Variants</h3>
-                        <p>Beyond classic Sudoku, there are many exciting variants that add new rules and challenges:</p>
+                </div>
+
+                <!-- Types Tab -->
+                <div id="types" class="tab-panel">
+                    <div class="content-section">
+                        <h2>🎨 Sudoku Variations</h2>
                         
-                        <div class="variant-card">
-                            <h4>Classic Sudoku</h4>
-                            <p>The standard 9×9 grid with the three basic rules.</p>
+                        <div class="types-grid">
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <h3>🔷 Classic Sudoku</h3>
+                                    <span class="difficulty easy">Beginner</span>
+                                </div>
+                                <p>The traditional 9×9 grid with standard rules. Perfect for beginners to learn the fundamentals.</p>
+                                <ul>
+                                    <li>Standard 9×9 grid</li>
+                                    <li>Numbers 1-9 only</li>
+                                    <li>Basic row, column, box rules</li>
+                                </ul>
+                            </div>
+
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <h3>⚔️ Killer Sudoku</h3>
+                                    <span class="difficulty medium">Intermediate</span>
+                                </div>
+                                <p>Combines Sudoku with mathematical cages. Numbers in cages must sum to the given total.</p>
+                                <ul>
+                                    <li>No given numbers initially</li>
+                                    <li>Colored cages with sum clues</li>
+                                    <li>No repeated numbers in cages</li>
+                                </ul>
+                                <div class="cta-buttons">
+                                <a href="https://en.wikipedia.org/wiki/Killer_sudoku#Solving_strategies" class="btn primary-btn" target="_blank">MORE</a>
+                                </div>
+                            </div>
+
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <h3>📐 Diagonal Sudoku</h3>
+                                    <span class="difficulty medium">Intermediate</span>
+                                </div>
+                                <p>Classic Sudoku with an additional constraint: both main diagonals must contain digits 1-9.</p>
+                                <ul>
+                                    <li>Standard Sudoku rules apply</li>
+                                    <li>Both diagonals need 1-9</li>
+                                    <li>Extra logical constraints</li>
+                                </ul>
+                                <div class="cta-buttons">
+                                <a href= "https://www.wikihow.com/Play-Diagonal-Sudoku#:~:text=The%20numbers%201%E2%80%939%20must%20appear%20exactly%20once%20in%20the,the%20puzzle%20follows%20these%20constraints." class="btn primary-btn" target="_blank">MORE</a>
+                                </div>
+                            </div>
+
+                           
+
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <h3>🎯 X-Sudoku</h3>
+                                    <span class="difficulty hard">Advanced</span>
+                                </div>
+                                <p>Features additional constraints where marked diagonals must also contain unique digits.</p>
+                                <ul>
+                                    <li>Extra diagonal constraints</li>
+                                    <li>More complex logic required</li>
+                                    <li>Multiple constraint interactions</li>
+                                </ul>
+                                <div class="cta-buttons">
+                                <a href="https://www.sudokuwiki.org/Sudoku_X_Strategies" class="btn primary-btn" target="_blank">MORE</a>
+                                </div>
+                            </div>
+
+                            <div class="type-card">
+                                <div class="type-header">
+                                    <h3>🔄 Multi-Grid Sudoku</h3>
+                                    <span class="difficulty expert">Expert</span>
+                                </div>
+                                <p>Multiple overlapping Sudoku grids that share common regions and must be solved together.</p>
+                                <ul>
+                                    <li>Multiple interconnected grids</li>
+                                    <li>Shared overlapping regions</li>
+                                    <li>Extreme logical complexity</li>
+                                </ul>
+                                <div class="cta-buttons">
+                                <a href="https://nrich.maths.org/problems/multiples-sudoku#:~:text=Rules%20of%20Multiples%20Sudoku,cells%20with%20the%20same%20number." class="btn primary-btn" target="_blank">MORE</a>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Tips Tab -->
+                <div id="tips" class="tab-panel">
+                    <div class="content-section">
+                        <h2>💡 Pro Tips & Shortcuts</h2>
                         
-                        <div class="variant-card">
-                            <h4>Killer Sudoku</h4>
-                            <p>Combines Sudoku with elements of Kakuro. Cells are grouped into "cages" with specified sums, and no digit can be repeated within a cage.</p>
-                        </div>
-                        
-                        <div class="variant-card">
-                            <h4>Diagonal Sudoku</h4>
-                            <p>In addition to the standard rules, the two main diagonals of the grid must also contain the digits 1-9 without repetition.</p>
-                        </div>
-                        
-                        <div class="variant-card">
-                            <h4>Odd/Even Sudoku</h4>
-                            <p>Some cells are shaded to indicate that they must contain odd or even digits.</p>
-                        </div>
-                        
-                        <div class="variant-card">
-                            <h4>Non-Standard Regions</h4>
-                            <p>Instead of the usual 3×3 boxes, the grid is divided into nine irregularly shaped regions.</p>
+                        <div class="tips-container">
+                            <div class="tip-category">
+                                <h3>🚀 Speed Solving Tips</h3>
+                                <div class="tip-list">
+                                    <div class="tip-item">
+                                        <span class="tip-number">1</span>
+                                        <div class="tip-content">
+                                            <h4>Scan for Easy Wins</h4>
+                                            <p>Always start by looking for cells with only one possible number. These are your "gimmes" and should be filled first.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item">
+                                        <span class="tip-number">2</span>
+                                        <div class="tip-content">
+                                            <h4>Use Pencil Marks</h4>
+                                            <p>Write small numbers in corners to track possibilities. This prevents mistakes and helps visualize patterns.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tip-item">
+                                        <span class="tip-number">3</span>
+                                        <div class="tip-content">
+                                            <h4>Focus on Constraints</h4>
+                                            <p>Look for rows, columns, or boxes that are nearly complete. These often reveal hidden singles.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tip-category">
+                                <h3>🎯 Common Mistakes to Avoid</h3>
+                                <div class="mistake-list">
+                                    <div class="mistake-item">
+                                        <span class="mistake-icon">❌</span>
+                                        <div class="mistake-content">
+                                            <h4>Guessing Too Early</h4>
+                                            <p>Always exhaust logical deduction before making assumptions. Guessing can lead to complex contradictions.</p>
+                                        </div>
+                                    </div>
+                                    <div class="mistake-item">
+                                        <span class="mistake-icon">❌</span>
+                                        <div class="mistake-content">
+                                            <h4>Ignoring Pencil Marks</h4>
+                                            <p>Failing to update possibility notes leads to missed opportunities and logical errors.</p>
+                                        </div>
+                                    </div>
+                                    <div class="mistake-item">
+                                        <span class="mistake-icon">❌</span>
+                                        <div class="mistake-content">
+                                            <h4>Tunnel Vision</h4>
+                                            <p>Don't focus on one area too long. Sometimes the solution lies in a different region.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="practice-section">
+                                <h3>🏋️ Practice Recommendations</h3>
+                                <div class="practice-grid">
+                                    <div class="practice-card">
+                                        <h4>Daily Practice</h4>
+                                        <p>Solve at least one puzzle daily to maintain and improve your skills.</p>
+                                    </div>
+                                    <div class="practice-card">
+                                        <h4>Start Easy</h4>
+                                        <p>Master easier puzzles before attempting harder difficulties.</p>
+                                    </div>
+                                    <div class="practice-card">
+                                        <h4>Time Yourself</h4>
+                                        <p>Track solving times to measure improvement and build speed.</p>
+                                    </div>
+                                    <div class="practice-card">
+                                        <h4>Learn Patterns</h4>
+                                        <p>Study common number patterns and configurations.</p>
+                                        <div class="cta-buttons">
+                                        <a href="https://sudokuprimer.com/patterns.php" class="btn primary-btn" target="_blank">Patterns-</a>
+                                        </div
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Interactive Demo Section -->
+            <div id="demo-section" class="demo-section" style="display: none;">
+                <div class="demo-header">
+                    <h3 id="demo-title">Technique Demo</h3>
+                    <button class="close-demo" onclick="closeDemoSection()">×</button>
+                </div>
+                <div class="demo-content">
+                    <div id="demo-grid" class="demo-sudoku-grid">
+                        <!-- Demo grid will be populated by JavaScript -->
+                    </div>
+                    <div class="demo-explanation">
+                        <div id="demo-text">
+                            <!-- Explanation text will be populated by JavaScript -->
+                        </div>
+                        <div class="demo-controls">
+                            <button class="demo-btn" onclick="nextStep()">Next Step</button>
+                            <button class="demo-btn secondary" onclick="resetDemo()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Sudoku Master. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
-            </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 GRID Master. All rights reserved. | Master the puzzle, master your mind.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script src="js/learning.js"></script>
 </body>
 </html>
