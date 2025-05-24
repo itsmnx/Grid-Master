@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - GRID MASTER</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="sudoku-watermark"></div>
+    
+    <header>
+        <div class="logo">
+            <h1>GRID MASTER</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="HOME.html">Home</a></li>
+                <li><a href="play.html">Play Sudoku</a></li>
+                <li><a href="learning.html">Learning Sudoku</a></li>
+                <li><a href="championship.html">Championship</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="#" id="logout-btn" class="auth-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img id="profile-image" src="https://via.placeholder.com/120/4A90E2/ffffff?text=GM" alt="Profile Avatar">
+                <div class="avatar-overlay">
+                    <span>Change Photo</span>
+                </div>
+            </div>
+            <div class="profile-info">
+                <h2 id="profile-name">John Doe</h2>
+                <p id="profile-email">john.doe@example.com</p>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="games-played">0</span>
+                        <span class="stat-label">Games Played</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="games-won">0</span>
+                        <span class="stat-label">Games Won</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="best-time">--:--</span>
+                        <span class="stat-label">Best Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="settings">Settings</button>
+            <button class="tab-btn" data-tab="achievements">Achievements</button>
+        </div>
+
+        <div class="tab-content">
+            <!-- Overview Tab -->
+            <div class="tab-pane active" id="overview">
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Recent Games</h3>
+                        <div class="recent-games" id="recent-games">
+                            <p>No recent games found. Start playing to see your game history!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>Progress Chart</h3>
+                        <div class="progress-chart">
+                            <div class="difficulty-progress">
+                                <div class="difficulty-item">
+                                    <span>Easy</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span>75%</span>
+                                </div>
+                                <div class="difficulty-item">
+                                    <span>Medium</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 45%"></div>
+                                    </div>
+                                    <span>45%</span>
+                                </div>
+                                <div class="difficulty-item">
+                                    <span>Hard</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 20%"></div>
+                                    </div>
+                                    <span>20%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-pane" id="settings">
+                <div class="settings-section">
+                    <h3>Personal Information</h3>
+                    <form id="profile-form" class="profile-form">
+                        <div class="form-group">
+                            <label for="edit-name">Full Name</label>
+                            <input type="text" id="edit-name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="edit-dob">Date of Birth</label>
+                            <input type="date" id="edit-dob" name="dob" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="edit-male" name="gender" value="male">
+                                    <label for="edit-male">Male</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="edit-female" name="gender" value="female">
+                                    <label for="edit-female">Female</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="edit-other" name="gender" value="other">
+                                    <label for="edit-other">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn save-btn">Save Changes</button>
+                    </form>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Game Preferences</h3>
+                    <div class="preference-item">
+                        <label class="switch">
+                            <input type="checkbox" id="sound-effects" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Sound Effects</span>
+                    </div>
+                    <div class="preference-item">
+                        <label class="switch">
+                            <input type="checkbox" id="auto-pencil" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Auto Pencil Marks</span>
+                    </div>
+                    <div class="preference-item">
+                        <label class="switch">
+                            <input type="checkbox" id="highlight-errors">
+                            <span class="slider"></span>
+                        </label>
+                        <span>Highlight Errors</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Tab -->
+            <div class="tab-pane" id="achievements">
+                <div class="achievements-grid">
+                    <div class="achievement-card unlocked">
+                        <div class="achievement-icon">🏆</div>
+                        <h4>First Victory</h4>
+                        <p>Complete your first Sudoku puzzle</p>
+                    </div>
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">⚡</div>
+                        <h4>Speed Demon</h4>
+                        <p>Complete a puzzle in under 5 minutes</p>
+                    </div>
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">🎯</div>
+                        <h4>Perfect Score</h4>
+                        <p>Complete 10 puzzles without any errors</p>
+                    </div>
+                    <div class="achievement-card locked">
+                        <div class="achievement-icon">🔥</div>
+                        <h4>Streak Master</h4>
+                        <p>Win 5 games in a row</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Grid Master. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
