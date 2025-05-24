@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Sudoku - SUDOKU MASTER</title>
+    <title>Play Sudoku - GRID MASTER</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sudoku.css">
+    
 </head>
 <body>
     <div class="sudoku-watermark"></div>
     
     <header>
-        <nav class="navbar">
-            <div class="logo">SUDOKU MASTER</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="play.html" class="active">Play Sudoku</a></li>
+        <div class="logo">
+            <h1>GRID MASTER</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="HOME.html" class="active">Home</a></li>
+                <li><a href="play.html">Play Sudoku</a></li>
                 <li><a href="learning.html">Learning Sudoku</a></li>
                 <li><a href="championship.html">Championship</a></li>
-                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="signin.html" class="auth-btn">Sign In</a></li>
             </ul>
         </nav>
     </header>
@@ -41,8 +44,9 @@
 
         <div class="sudoku-container">
             <!-- Sudoku grid will be generated here by JavaScript -->
+            
             <div id="sudoku-grid" class="sudoku-grid">
-                <!-- 9x9 grid with 81 cells will be created by JS -->
+                  <!-- 9x9 grid with 81 cells will be created by JS -->
             </div>
             
             <div class="number-pad">
@@ -66,9 +70,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 SUDOKU MASTER. All rights reserved.</p>
+        <p>&copy; 2025 GRID MASTER. All rights reserved.</p>
     </footer>
-
+   
     <script src="js/sudoku-generator.js"></script>
     <script src="js/sudoku-solver.js"></script>
     <script src="js/play.js"></script>
