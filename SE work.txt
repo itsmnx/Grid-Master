@@ -1,0 +1,2 @@
+to download staruml version 1
+to draw diagrams of dfds,er diagram and other

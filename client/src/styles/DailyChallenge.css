@@ -1,0 +1,242 @@
+.daily-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.daily-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.daily-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.daily-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.daily-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.selected-date-info {
+  margin: 1rem 0;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.selected-date-info strong {
+  font-weight: 600;
+}
+
+.toggle-calendar-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.toggle-calendar-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.calendar-section {
+  margin-bottom: 2rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.streak-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.streak-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.streak-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.streak-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.streak-label {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.puzzle-info {
+  background: var(--light);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.puzzle-info h3 {
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.info-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.auth-notice {
+  background: #fef3c7;
+  border: 2px solid #fbbf24;
+  color: #92400e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.auth-notice h3 {
+  margin-bottom: 0.5rem;
+}
+
+.auth-notice a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.daily-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.daily-timer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--light);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.timer-label {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.timer-value {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.daily-stats {
+  background: var(--light);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.daily-stats p {
+  margin: 0.5rem 0;
+  color: var(--dark);
+}
+
+.daily-stats strong {
+  color: var(--primary);
+}
+
+.streak-info {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.streak-card {
+  background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.streak-icon {
+  font-size: 2.5rem;
+}
+
+.streak-number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.streak-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
